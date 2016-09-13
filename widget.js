@@ -317,18 +317,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     Id:"axes" + this.pencilCtr++
                 });
                 
-                if (axis == "X") {
-                    this.lastVal.mx = tgtEl.valueAsNumber;
-                }
-                else if (axis == "Y") {
-                    this.lastVal.my = tgtEl.val();
-                }
-                else if (axis == "Z") {
-                    this.lastVal.mz = tgtEl.val();
-                }
-                
-                console.log("lastVal: ", this.lastVal)
-                
                 this.pencilHide(tgtEl.parents('.com-chilipeppr-xyz-pos-well'));
             } else if (evt.keyCode == 27) {
                 console.log("ESC key hit");
@@ -1363,7 +1351,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             console.warn("zeroOutAxis10. evt.data:", evt.data, "evt:", evt, "lastVal:", this.lastVal.mx, ",", this.lastVal.my, ",", this.lastVal.mz);
             var cmd = '';
             if (evt.data == "xyz") {
-                cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + ' X' + (this.lastVal.mx) + ' Y' + (this.lastVal.my) + ' Z' + (this.lastVal.mz);
+                cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + ' X' + (this.lastVal.x) + ' Y' + (this.lastVal.y) + ' Z' + (this.lastVal.z);
                 if (this.isAAxisShowing) {
                     cmd += ' A' + (this.lastVal.ma);
                 }
