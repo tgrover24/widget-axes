@@ -1353,7 +1353,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             if (evt.data == "xyz") {
                 cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + ' X' + (this.lastVal.x) + ' Y' + (this.lastVal.y) + ' Z' + (this.lastVal.z);
                 if (this.isAAxisShowing) {
-                    cmd += ' A' + (this.lastVal.ma);
+                    cmd += ' A' + (this.lastVal.a);
                 }
             } else {
                 cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + (this.lastVal[evt.data]);
