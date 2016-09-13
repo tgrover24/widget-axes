@@ -317,6 +317,16 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     Id:"axes" + this.pencilCtr++
                 });
                 
+                if (axis == "X") {
+                    this.lastVal.mx = tgtEl.val();
+                }
+                else if (axis == "Y") {
+                    this.lastVal.my = tgtEl.val();
+                }
+                else if (axis == "Z") {
+                    this.lastVal.mz = tgtE1.val();
+                }
+                
                 this.pencilHide(tgtEl.parents('.com-chilipeppr-xyz-pos-well'));
             } else if (evt.keyCode == 27) {
                 console.log("ESC key hit");
