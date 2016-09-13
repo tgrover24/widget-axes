@@ -310,7 +310,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 console.log("enter key hit");
                 
                 // send gcode
-                var gcode = "G90 G0 " + axis + tgtEl.val();
+                var gcode = "G90 G0 " + axis + tgtEl.valueAsNumber;
                 console.log("about to send gcode:", gcode);
                 chilipeppr.publish('/com-chilipeppr-widget-serialport/jsonSend', {
                     D: gcode, 
