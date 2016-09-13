@@ -310,7 +310,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 console.log("enter key hit");
                 
                 // send gcode
-                var gcode = "G90 G0 " + axis + tgtEl.valueAsNumber;
+                var gcode = "G90 G0 " + axis + tgtEl.val();
                 console.log("about to send gcode:", gcode);
                 chilipeppr.publish('/com-chilipeppr-widget-serialport/jsonSend', {
                     D: gcode, 
@@ -318,7 +318,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 });
                 
                 if (axis == "X") {
-                    this.lastVal.mx = tgtEl.val();
+                    this.lastVal.mx = tgtEl.valueAsNumber;
                 }
                 else if (axis == "Y") {
                     this.lastVal.my = tgtEl.val();
