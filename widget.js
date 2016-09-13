@@ -327,6 +327,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     this.lastVal.mz = tgtE1.val();
                 }
                 
+                console.log("lastVal: ", lastVal)
                 this.pencilHide(tgtEl.parents('.com-chilipeppr-xyz-pos-well'));
             } else if (evt.keyCode == 27) {
                 console.log("ESC key hit");
