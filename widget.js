@@ -327,7 +327,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     this.lastVal.mz = tgtEl.val();
                 }
                 
-                console.log("lastVal: ", lastVal)
+                console.log("lastVal: ", this.lastVal)
                 
                 this.pencilHide(tgtEl.parents('.com-chilipeppr-xyz-pos-well'));
             } else if (evt.keyCode == 27) {
