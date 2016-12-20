@@ -1351,12 +1351,15 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             console.warn("zeroOutAxis10. evt.data:", evt.data, "evt:", evt, "lastVal:", this.lastVal.mx, ",", this.lastVal.my, ",", this.lastVal.mz);
             var cmd = '';
             if (evt.data == "xyz") {
-                cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + ' X' + (this.lastVal.x) + ' Y' + (this.lastVal.y) + ' Z' + (this.lastVal.z);
+                //cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + ' X' + (this.lastVal.x) + ' Y' + (this.lastVal.y) + ' Z' + (this.lastVal.z);
+                cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + ' X0 Y0 Z0';
                 if (this.isAAxisShowing) {
-                    cmd += ' A' + (this.lastVal.a);
+                    //cmd += ' A' + (this.lastVal.a);
+                    cmd += ' A0';
                 }
             } else {
-                cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + (this.lastVal[evt.data]);
+                //cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + (this.lastVal[evt.data]);
+                cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + '0';
             }
             cmd += "\n";
             console.log(cmd);
