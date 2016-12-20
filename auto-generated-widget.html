@@ -1600,7 +1600,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 }
             } else {
                 //cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + (this.lastVal[evt.data]);
-                cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + '0';
+                cmd += 'G10 L20 P' + (this.lastCoords.coordNum - 53) + ' ' + evt.data.substr(-1).toUpperCase() + '0';
             }
             cmd += "\n";
             console.log(cmd);
